@@ -1,0 +1,91 @@
+
+        *{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+        body{
+            
+            background: rgb(219, 145, 157);
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            min-height: 100vh;
+        }
+        .container{
+            position: relative;
+            display: flex;
+            justify-content:center;    
+            flex-direction: column;
+            align-items:center;
+            gap: 30px;
+            background: pink;
+            padding: 40px 60px;
+        }
+        h2{
+            font-size: 3em;
+            color: rgb(148, 93, 93);
+            text-transform: uppercase ;
+            letter-spacing: 0.1em;
+
+        }
+        .game{
+            width: 430px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            transform-style: preserve-3d;
+            perspective: 500px;
+        }
+        .reset{
+            margin-top: 150px;
+            margin-left: 10px;
+            padding: 15px 20px;
+            color: rgb(0, 0, 0);
+            background: rgb(255, 125, 147);
+            border: none;
+            font-size: 1.5em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight:600 ;
+            border-radius: 50px;
+            height: 70px;
+        }
+        .reset:focus{
+            color:rgb(0, 0, 0);
+            background: rgb(219, 145, 157);
+        }
+        .item{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            background: wheat;
+            transform: rotateY(180deg);
+            transition: 0.25s;
+        }
+        .item.boxOpen{
+            transform: rotateY(0deg);
+        }
+        .item::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: palevioletred;
+            transform: 0.25;
+            transform: rotateY(0deg);
+            backface-visibility: hidden;
+         }
+         .boxOpen::after,
+         .boxMatch:after{
+            transform: rotateY(180deg);
+         }
+       
+
